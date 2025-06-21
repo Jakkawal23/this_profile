@@ -25,26 +25,61 @@ export default function HomePage() {
     }
   };
 
+  // return (
+  //   <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
+  //     <TopToolbar />
+
+  //     {/* Tabs fixed under toolbar */}
+  //     <EditorTabs
+  //       tabs={openTabs}
+  //       active={activeTab}
+  //       onSwitch={setActiveTab}
+  //       onClose={closeFile}
+  //     />
+
+  //     {/* Main area: sidebar + content */}
+  //     <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
+  //       {/* Sidebar (scroll only inside FileExplorer) */}
+  //       <div style={{ width: 220, flexShrink: 0, height: '100%' }}>
+  //         <FileExplorer onOpen={openFile} />
+  //       </div>
+
+  //       {/* Main content area scrolls inside only EditorView */}
+  //       <div style={{ flex: 1, height: '100%', overflow: 'hidden' }}>
+  //         <FileExplorer fileId={activeTab} />
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
       <TopToolbar />
 
-      <div style={{ flex: 1, display: 'flex' }}>
-        <div style={{ width: 220, flexShrink: 0 }}>
+      {/* Main area: sidebar + content */}
+      <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
+        {/* Sidebar (scroll only inside FileExplorer) */}
+        <div style={{ width: 220, flexShrink: 0, height: '100%' }}>
           <FileExplorer onOpen={openFile} />
         </div>
 
-
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        {/* Right pane: EditorTabs + EditorView */}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
+          {/* Tabs: now only above EditorView */}
           <EditorTabs
             tabs={openTabs}
             active={activeTab}
             onSwitch={setActiveTab}
             onClose={closeFile}
           />
-          <EditorView fileId={activeTab} />
+
+          {/* Content area scrolls only here */}
+          <div style={{ flex: 1, overflow: 'hidden' }}>
+            <EditorView fileId={activeTab} />
+          </div>
         </div>
       </div>
     </div>
   );
+
 }

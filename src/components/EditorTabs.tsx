@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { fileStructure } from '../data/fileMap';
 import { getAllFiles } from '../utils/fileHelpers';
 
@@ -14,6 +14,20 @@ interface Props {
 export default function EditorTabs({ tabs, active, onSwitch, onClose }: Props) {
   const allFiles = getAllFiles(fileStructure);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // เก็บ ref สำหรับแต่ละ tab
+  const tabRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  // scroll ไปหาแท็บที่ active ทุกครั้งที่ active เปลี่ยน
+  useEffect(() => {
+    if (active && tabRefs.current[active]) {
+      tabRefs.current[active]!.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
+    }
+  }, [active]);
 
   return (
     <div style={{ borderBottom: '1px solid #ccc', overflow: 'hidden' }}>
@@ -34,6 +48,9 @@ export default function EditorTabs({ tabs, active, onSwitch, onClose }: Props) {
             return (
               <div
                 key={id}
+                ref={(el) => {
+                  tabRefs.current[id] = el;
+                }}
                 style={{
                   padding: '0.5rem 1rem',
                   background: id === active ? '#fff' : '#e0e0e0',

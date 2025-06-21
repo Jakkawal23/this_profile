@@ -6,6 +6,63 @@ export default function ProjectsPage() {
         <li>📦 YOLO Meter Reader</li>
         <li>🛍 TaladHub Platform</li>
         <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
+        <li>📦 YOLO Meter Reader</li>
+        <li>🛍 TaladHub Platform</li>
+        <li>🤖 AI Object Detection Playground</li>
       </ul>
     </div>
   );

@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { FolderMeta } from '../data/fileMap'; // import type FolderMeta
-import { fileStructure } from '../data/fileMap'; // import data
+import { FolderMeta } from '../data/fileMap';
+import { fileStructure } from '../data/fileMap';
 
 interface Props {
   onOpen: (id: string) => void;
@@ -37,14 +37,17 @@ export default function FileExplorer({ onOpen }: Props) {
             fontWeight: 'bold',
             marginBottom: '0.25rem',
             userSelect: 'none',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
           }}
+          title={folder.title}
         >
           {isExpanded ? 'v 📂' : '> 📁'} {folder.title}
         </div>
 
         {isExpanded && (
           <ul style={{ listStyle: 'none', paddingLeft: '1rem' }}>
-            {/* แสดงไฟล์ในโฟลเดอร์นี้ */}
             {folder.files?.map((file) => (
               <li key={file.id}>
                 <button
@@ -55,19 +58,20 @@ export default function FileExplorer({ onOpen }: Props) {
                     padding: '4px 0',
                     cursor: 'pointer',
                     color: activeFileId === file.id ? '#fff' : '#007acc',
-                    backgroundColor:
-                      activeFileId === file.id ? '#007acc' : 'transparent',
+                    backgroundColor: activeFileId === file.id ? '#007acc' : 'transparent',
                     borderRadius: '4px',
                     width: '100%',
                     textAlign: 'left',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
                   }}
+                  title={file.title}
                 >
                   📄 {file.title}
                 </button>
               </li>
             ))}
-
-            {/* แสดงโฟลเดอร์ลูก (recursive) */}
             {folder.folders?.map((childFolder) => renderFolder(childFolder))}
           </ul>
         )}
@@ -78,10 +82,10 @@ export default function FileExplorer({ onOpen }: Props) {
   return (
     <aside
       style={{
-        // width: 200,
         background: '#f0f0f0',
         padding: '1rem',
-        overflowY: 'auto',
+        height: '100%',
+        overflowY: 'auto', // scroll only inside sidebar
       }}
     >
       <h4 style={{ marginBottom: '1rem' }}>/this_profile</h4>
@@ -89,5 +93,6 @@ export default function FileExplorer({ onOpen }: Props) {
         {fileStructure.map((folder) => renderFolder(folder))}
       </ul>
     </aside>
+
   );
 }
