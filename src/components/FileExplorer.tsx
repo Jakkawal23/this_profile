@@ -40,6 +40,7 @@ export default function FileExplorer({ onOpen }: Props) {
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
+            color: 'var(--explorer-folder-font)'
           }}
           title={folder.title}
         >
@@ -57,8 +58,8 @@ export default function FileExplorer({ onOpen }: Props) {
                     border: 'none',
                     padding: '4px 0',
                     cursor: 'pointer',
-                    color: activeFileId === file.id ? '#fff' : '#007acc',
-                    backgroundColor: activeFileId === file.id ? '#007acc' : 'transparent',
+                    color: activeFileId === file.id ? 'var(--exploere-file-font-active)' : 'var(--exploere-file-font)',
+                    backgroundColor: activeFileId === file.id ? 'var(--exploere-file-font-active-bg)' : 'transparent',
                     borderRadius: '4px',
                     width: '100%',
                     textAlign: 'left',
@@ -82,13 +83,13 @@ export default function FileExplorer({ onOpen }: Props) {
   return (
     <aside
       style={{
-        background: '#f0f0f0',
+        background: "var(--explorer-background)",
         padding: '1rem',
         height: '100%',
         overflowY: 'auto', // scroll only inside sidebar
       }}
     >
-      <h4 style={{ marginBottom: '1rem' }}>/this_profile</h4>
+      <h4 style={{ marginBottom: '1rem', color: 'var(--explorer-title)' }}>/this_profile</h4>
       <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
         {fileStructure.map((folder) => renderFolder(folder))}
       </ul>

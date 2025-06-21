@@ -5,7 +5,7 @@ import { fileStructure } from '../data/fileMap';
 import { getAllFiles, findFolderPathByFileId } from '../utils/fileHelpers';
 
 export default function EditorView({ fileId }: { fileId: string | null }) {
-  if (!fileId) return <p style={{ padding: '1rem' }}>No file selected</p>;
+  if (!fileId) return <p style={{ padding: '1rem', color: 'var(--foreground)' }}>No file selected</p>;
 
   const allFiles = getAllFiles(fileStructure);
   const file = allFiles.find((f) => f.id === fileId);
@@ -23,7 +23,7 @@ export default function EditorView({ fileId }: { fileId: string | null }) {
   return (
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
       {/* Breadcrumb */}
-      <nav style={{ fontSize: '0.9rem', color: '#555', padding: '0.75rem', flexShrink: 0 }}>
+      <nav style={{ fontSize: '0.9rem', color: 'var(--view-short-path-color)', padding: '0.75rem', flexShrink: 0 }}>
         {folderPath
           ? folderPath.map((folder, idx) => (
               <span key={folder.id}>
@@ -37,7 +37,15 @@ export default function EditorView({ fileId }: { fileId: string | null }) {
       </nav>
 
       {/* Content Area */}
-      <div style={{ flex: 1, overflowY: 'auto', padding: '0.75rem' }}>
+      <div style={{
+        flex: 1,
+        overflowY: 'auto',
+        paddingTop: '0.125rem',
+        paddingRight: '1rem',
+        paddingBottom: '1rem',
+        paddingLeft: '2rem',
+        color: 'var(--view-content-color)'
+      }}>
         <Component />
       </div>
     </div>
