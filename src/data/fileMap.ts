@@ -1,8 +1,10 @@
+import { ComponentType } from 'react';
+
 // data/fileMap.ts
 export interface FileMeta {
   id: string;
   title: string;
-  loadComponent?: () => Promise<any>; // ไฟล์จริงมี loadComponent
+  loadComponent?: () => Promise<{ default: ComponentType<any> }>;
   // ถ้าเป็น folder จะไม่มี loadComponent
 }
 

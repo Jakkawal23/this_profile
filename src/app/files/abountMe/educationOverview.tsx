@@ -3,27 +3,42 @@
 export default function EducationOverviewPage() {
   const education = [
     {
-      name: 'Chiang Mai University',
+      name: 'University of Phayao',
       degree: 'B.Eng. in Computer Engineering',
       years: '2019 - 2023',
-      location: 'Chiang Mai, Thailand',
-      gpa: '3.78',
-      highlights: ['First-Class Honors', 'President of Coding Club', 'Dean’s List'],
+      location: 'Phayao, Thailand',
+      gpa: '3.75',
+      highlights: ['First-Class Honors', 'คณะกรรมการองค์การนิสิต', 'ผู้นำนิสิต', 'ประธานชั้นปี', 'TA'],
     },
     {
-      name: 'Yupparaj Wittayalai School',
+      name: 'โรงเรียนสอนภาษาจีนอาชีวศึกษาแม่สาย',
+      program: 'Information Program',
+      years: '2016 - 2018',
+      location: 'Chiang Rai, Thailand',
+      gpa: '3.85',
+      highlights: ['รองประธานนักเรียน', 'แกนนำในการจัดกิจกรรมในโรงเรียน'],
+    },
+    {
+      name: 'Watthumpla Witthayakhom School',
       program: 'Science-Math Program',
       years: '2016 - 2018',
-      location: 'Chiang Mai, Thailand',
+      location: 'Chiang Rai, Thailand',
       gpa: '3.85',
-      highlights: ['Math Olympiad Team', 'Student Council', 'Robotics Competition Winner'],
+      highlights: ['ประธานนักเรียน', 'ประกวดโครงงานวิทยาสตร์'],
     },
     {
-      name: 'Municipal Primary School 1',
+      name: 'Santiwana School',
       program: 'Primary Education',
       years: '2008 - 2015',
       location: 'Chiang Mai, Thailand',
       highlights: ['Top of Class', 'Library Club'],
+    },
+    {
+      name: 'Ban Phadang School',
+      program: 'Primary Education',
+      years: '2008 - 2015',
+      location: 'Chiang Mai, Thailand',
+      highlights: ['ประกวดโครงงานวิทยาศาสตร์', 'คณิตศาสาตร์อัจฉริยะ'],
     },
   ];
 
