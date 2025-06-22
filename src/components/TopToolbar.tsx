@@ -46,7 +46,7 @@ const darkTheme = {
   '--tool-border-bottom': '#444c56',
 };
 
-export default function TopToolbar() {
+export default function TopToolbars() {
   const menus = ['File', 'Edit', 'Selection', 'View', 'Go', 'Run', 'Terminal', 'Help', 'Theme'];
   const [themeMenuOpen, setThemeMenuOpen] = useState(false);
   const [theme, setTheme] = useState(
@@ -130,6 +130,13 @@ export default function TopToolbar() {
                   textAlign: 'left',
                   cursor: 'pointer',
                   fontSize: 'inherit',
+                  transition: 'background-color 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--tool-background-hover)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
                 }}
                 onClick={() => {
                   setTheme('light');
@@ -148,6 +155,13 @@ export default function TopToolbar() {
                   textAlign: 'left',
                   cursor: 'pointer',
                   fontSize: 'inherit',
+                  transition: 'background-color 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--tool-background-hover)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
                 }}
                 onClick={() => {
                   setTheme('dark');
@@ -158,6 +172,7 @@ export default function TopToolbar() {
               </button>
             </div>
           )}
+
         </div>
       ))}
 

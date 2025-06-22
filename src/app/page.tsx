@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import FileExplorer from '../components/FileExplorer';
-import EditorTabs from '../components/EditorTabs';
-import EditorView from '../components/EditorView';
-import TopToolbar from '../components/TopToolbar';
+import EditorTabs from '@/components/EditorTabs';
+import EditorView from '@/components/EditorView';
+import FileExplorer from '@/components/FileExplorer';
+import TopToolbar from '@/components/TopToolbar';
 
 export default function HomePage() {
   const [openTabs, setOpenTabs] = useState<string[]>([]);
@@ -38,7 +38,7 @@ export default function HomePage() {
       <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
         {/* Sidebar (scroll only inside FileExplorer) */}
         <div style={{ width: 300, flexShrink: 0, height: '100%' }}>
-          <FileExplorer onOpen={openFile} />
+          <FileExplorer onOpen={openFile} activeFileId={activeTab} />
         </div>
 
         {/* Right pane: EditorTabs + EditorView */}
@@ -54,7 +54,7 @@ export default function HomePage() {
 
           {/* Content area scrolls only here */}
           <div style={{ flex: 1, overflow: 'hidden', color: '#fff' }}>
-            <EditorView fileId={activeTab} />
+            <EditorView fileId={activeTab} onOpen={openFile} />
           </div>
         </div>
       </div>

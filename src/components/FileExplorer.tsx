@@ -1,16 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FolderMeta } from '../data/fileMap';
 import { fileStructure } from '../data/fileMap';
 
 interface Props {
   onOpen: (id: string) => void;
+  activeFileId?: string | null;
 }
 
-export default function FileExplorer({ onOpen }: Props) {
+export default function FileExplorer({ onOpen, activeFileId }: Props) {
   const [expanded, setExpanded] = useState<string[]>([]);
-  const [activeFileId, setActiveFileId] = useState<string | null>(null);
+  const [hoveredFileId, setHoveredFileId] = useState<string | null>(null);
 
   const toggleFolder = (folderId: string) => {
     setExpanded((prev) =>
@@ -20,9 +21,27 @@ export default function FileExplorer({ onOpen }: Props) {
     );
   };
 
-  const handleFileClick = (fileId: string) => {
-    setActiveFileId(fileId);
-    onOpen(fileId);
+  useEffect(() => {
+    if (activeFileId) {
+      expandFoldersToFile(activeFileId);
+    }
+  }, [activeFileId]);
+
+  const expandFoldersToFile = (fileId: string) => {
+    const findPath = (folders: FolderMeta[], targetId: string, path: string[] = []): string[] | null => {
+      for (const folder of folders) {
+        if (folder.files?.some(f => f.id === targetId)) {
+          return [...path, folder.id];
+        }
+        if (folder.folders) {
+          const result = findPath(folder.folders, targetId, [...path, folder.id]);
+          if (result) return result;
+        }
+      }
+      return null;
+    };
+    const path = findPath(fileStructure, fileId);
+    if (path) setExpanded(prev => Array.from(new Set([...prev, ...path])));
   };
 
   const renderFolder = (folder: FolderMeta) => {
@@ -49,30 +68,48 @@ export default function FileExplorer({ onOpen }: Props) {
 
         {isExpanded && (
           <ul style={{ listStyle: 'none', paddingLeft: '1rem' }}>
-            {folder.files?.map((file) => (
-              <li key={file.id}>
-                <button
-                  onClick={() => handleFileClick(file.id)}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    padding: '4px 0',
-                    cursor: 'pointer',
-                    color: activeFileId === file.id ? 'var(--exploere-file-font-active)' : 'var(--exploere-file-font)',
-                    backgroundColor: activeFileId === file.id ? 'var(--exploere-file-font-active-bg)' : 'transparent',
-                    borderRadius: '4px',
-                    width: '100%',
-                    textAlign: 'left',
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                  }}
-                  title={file.title}
-                >
-                  📄 {file.title}
-                </button>
-              </li>
-            ))}
+            {folder.files?.map((file) => {
+              const isActive = activeFileId === file.id;
+              const isHovered = hoveredFileId === file.id;
+              return (
+                <li key={file.id}>
+                  <button
+                    onMouseEnter={() => {
+                      expandFoldersToFile(file.id);
+                      setHoveredFileId(file.id);
+                    }}
+                    onClick={() => {
+                      expandFoldersToFile(file.id);
+                      onOpen(file.id);
+                    }}
+                    onMouseLeave={() => setHoveredFileId(null)}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: '4px 0',
+                      cursor: 'pointer',
+                      color: isActive || isHovered ? 'var(--exploere-file-font-active)' : 'var(--exploere-file-font)',
+                      backgroundColor: isActive
+                        ? 'var(--exploere-file-font-active-bg)'
+                        : isHovered
+                          ? 'var(--exploere-file-font-hover-bg, #e0e0e0)'
+                          : 'transparent',
+                      borderRadius: '4px',
+                      width: '100%',
+                      textAlign: 'left',
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      transition: 'background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s',
+                      boxShadow: isHovered ? '0 2px 8px 0 #007acc33' : undefined,
+                    }}
+                    title={file.title}
+                  >
+                    📄 {file.title}
+                  </button>
+                </li>
+              );
+            })}
             {folder.folders?.map((childFolder) => renderFolder(childFolder))}
           </ul>
         )}
@@ -89,11 +126,10 @@ export default function FileExplorer({ onOpen }: Props) {
         overflowY: 'auto', // scroll only inside sidebar
       }}
     >
-      <h4 style={{ marginBottom: '1rem', color: 'var(--explorer-title)' }}>/this_profile</h4>
+      <h4 style={{ marginBottom: '1rem', color: 'var(--explorer-title)' }}>JAKKAWAL PHOOLUEMSAI</h4>
       <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
         {fileStructure.map((folder) => renderFolder(folder))}
       </ul>
     </aside>
-
   );
 }

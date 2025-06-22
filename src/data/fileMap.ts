@@ -19,12 +19,17 @@ export const fileStructure: FolderMeta[] = [
       {
         id: 'profile-summary',
         title: 'Profile Summary',
-        loadComponent: () => import('@/app/files/about'),
+        loadComponent: () => import('@/app/files/abountMe/profileSummary'),
       },
       {
         id: 'education-overview',
         title: 'Education Overview',
-        loadComponent: () => import('@/app/files/about'),
+        loadComponent: () => import('@/app/files/abountMe/educationOverview'),
+      },
+      {
+        id: 'experience-overview',
+        title: 'Experience Overview',
+        loadComponent: () => import('@/app/files/abountMe/experienceOverview'),
       },
     ],
   },
@@ -37,9 +42,24 @@ export const fileStructure: FolderMeta[] = [
         title: 'High School',
         files: [
           {
-            id: 'science-projects',
-            title: 'Science Project Competitions',
-            loadComponent: () => import('@/app/files/about'),
+            id: 'high-school-overview',
+            title: 'Overview',
+            loadComponent: () => import('@/app/files/education/highSchool/overview'),
+          },
+          {
+            id: 'high-school-activities',
+            title: 'Activities',
+            loadComponent: () => import('@/app/files/education/highSchool/activities'),
+          },
+          {
+            id: 'high-school-roles',
+            title: 'Roles',
+            loadComponent: () => import('@/app/files/education/highSchool/roles'),
+          },
+          {
+            id: 'high-school-awards',
+            title: 'Awards',
+            loadComponent: () => import('@/app/files/education/highSchool/awards'),
           },
         ],
       },
@@ -48,14 +68,24 @@ export const fileStructure: FolderMeta[] = [
         title: 'University',
         files: [
           {
-            id: 'roles-and-responsibilities',
-            title: 'Roles & Responsibilities',
-            loadComponent: () => import('@/app/files/about'),
+            id: 'university-overview',
+            title: 'Overview',
+            loadComponent: () => import('@/app/files/education/university/overview'),
           },
           {
             id: 'university-activities',
-            title: 'Competitions & Activities',
-            loadComponent: () => import('@/app/files/about'),
+            title: 'Activities',
+            loadComponent: () => import('@/app/files/education/university/activities'),
+          },
+          {
+            id: 'university-roles',
+            title: 'Roles',
+            loadComponent: () => import('@/app/files/education/university/roles'),
+          },
+          {
+            id: 'university-awards',
+            title: 'Awards',
+            loadComponent: () => import('@/app/files/education/university/awards'),
           },
         ],
       },
@@ -64,9 +94,9 @@ export const fileStructure: FolderMeta[] = [
         title: 'After Graduation',
         files: [
           {
-            id: 'life-after-grad',
-            title: 'Life After Graduation',
-            loadComponent: () => import('@/app/files/about'),
+            id: 'after-graduation-overview',
+            title: 'Overview',
+            loadComponent: () => import('@/app/files/education/afterGraduation/overview'),
           },
         ],
       },
@@ -77,18 +107,13 @@ export const fileStructure: FolderMeta[] = [
     title: 'Experience',
     folders: [
       {
-        id: 'work',
+        id: 'work-experience',
         title: 'Work Experience',
         files: [
           {
-            id: 'fulltime-talad-hub',
-            title: 'TaladHub (Full-time)',
-            loadComponent: () => import('@/app/files/projects'),
-          },
-          {
-            id: 'freelance-projects',
-            title: 'Freelance Projects',
-            loadComponent: () => import('@/app/files/projects'),
+            id: 'work-experience-overview',
+            title: 'Overview',
+            loadComponent: () => import('@/app/files/experience/workExperience/overview'),
           },
         ],
       },
@@ -97,9 +122,9 @@ export const fileStructure: FolderMeta[] = [
         title: 'Internships',
         files: [
           {
-            id: 'intern-company-1',
-            title: 'Internship at [Company Name]',
-            loadComponent: () => import('@/app/files/projects'),
+            id: 'internship-overview',
+            title: 'Overview',
+            loadComponent: () => import('@/app/files/experience/internships/overview'),
           },
         ],
       },
@@ -108,30 +133,9 @@ export const fileStructure: FolderMeta[] = [
         title: 'Competitions',
         files: [
           {
-            id: 'code-contest',
-            title: 'Coding Competitions',
-            loadComponent: () => import('@/app/files/projects'),
-          },
-          {
-            id: 'innovation-challenge',
-            title: 'Innovation/Startup Challenges',
-            loadComponent: () => import('@/app/files/projects'),
-          },
-        ],
-      },
-      {
-        id: 'volunteer',
-        title: 'Volunteer / Other Activities',
-        files: [
-          {
-            id: 'university-volunteer',
-            title: 'University Volunteer Projects',
-            loadComponent: () => import('@/app/files/projects'),
-          },
-          {
-            id: 'community-events',
-            title: 'Community / Social Impact Events',
-            loadComponent: () => import('@/app/files/projects'),
+            id: 'competitions-overview',
+            title: 'Overview',
+            loadComponent: () => import('@/app/files/experience/competitions/overview'),
           },
         ],
       },
@@ -142,14 +146,9 @@ export const fileStructure: FolderMeta[] = [
     title: 'Projects',
     files: [
       {
-        id: 'main-projects',
-        title: 'Main Projects',
-        loadComponent: () => import('@/app/files/projects'),
-      },
-      {
-        id: 'personal-projects',
-        title: 'Personal / Side Projects',
-        loadComponent: () => import('@/app/files/projects'),
+        id: 'projects-overview',
+        title: 'Overview',
+        loadComponent: () => import('@/app/files/projects/overview'),
       },
     ],
   },
@@ -158,14 +157,14 @@ export const fileStructure: FolderMeta[] = [
     title: 'Skills',
     files: [
       {
-        id: 'tech-skills',
+        id: 'technical-skills',
         title: 'Technical Skills',
-        loadComponent: () => import('@/app/files/projects'),
+        loadComponent: () => import('@/app/files/skills/technicalSkills'),
       },
       {
         id: 'soft-skills',
         title: 'Soft Skills',
-        loadComponent: () => import('@/app/files/projects'),
+        loadComponent: () => import('@/app/files/skills/softSkills'),
       },
     ],
   },
@@ -176,12 +175,12 @@ export const fileStructure: FolderMeta[] = [
       {
         id: 'contact-info',
         title: 'Contact Information',
-        loadComponent: () => import('@/app/files/projects'),
+        loadComponent: () => import('@/app/files/contract/contractInformation'),
       },
       {
         id: 'social-links',
         title: 'Social Media Links',
-        loadComponent: () => import('@/app/files/projects'),
+        loadComponent: () => import('@/app/files/contract/socialMedia'),
       },
     ],
   },
