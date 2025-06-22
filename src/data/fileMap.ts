@@ -4,7 +4,8 @@ import { ComponentType } from 'react';
 export interface FileMeta {
   id: string;
   title: string;
-  loadComponent?: () => Promise<{ default: ComponentType<any> }>;
+  // loadComponent?: () => Promise<{ default: ComponentType<any> }>;
+  loadComponent?: () => Promise<{ default: ComponentType<unknown> }>;
   // ถ้าเป็น folder จะไม่มี loadComponent
 }
 
