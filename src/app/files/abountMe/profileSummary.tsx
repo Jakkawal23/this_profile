@@ -10,9 +10,9 @@ export default function ProfileSummaryPage() {
       {/* ข้อมูลส่วนตัว */}
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>🧑‍🏫 ข้อมูลส่วนตัว</h2>
-        <p><strong>ชื่อ:</strong> จักรวาล ภูลือไชย (Jakkawal Phooluemsai)</p>
+        <p><strong>ชื่อ:</strong> จักรวาล กาแล็กซี่ (Jakkawal Galaxy)</p>
         <p><strong>ชื่อเล่น:</strong> Whale</p>
-        <p><strong>ที่อยู่:</strong> เชียงใหม่, ประเทศไทย (พร้อมทำงาน Remote / Relocate)</p>
+        <p><strong>ที่อยู่:</strong> เชียงใหม่, ประเทศไทย</p>
         <p><strong>ภาษาที่ใช้ได้:</strong> ไทย (เจ้าของภาษา), อังกฤษ (ดีมาก), จีน (พื้นฐาน)</p>
       </section>
 
@@ -76,8 +76,7 @@ export default function ProfileSummaryPage() {
       <section>
         <h2 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>📫 ช่องทางการติดต่อ</h2>
         <p><strong>Email:</strong> jakkawal@example.com</p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/jakkawal" target="_blank" style={{ color: '#007acc' }}>github.com/jakkawal</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jakkawal" target="_blank" style={{ color: '#007acc' }}>linkedin.com/in/jakkawal</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/jakkawal23" target="_blank" style={{ color: '#007acc' }}>github.com/jakkawal23</a></p>
       </section>
     </div>
   );

@@ -18,7 +18,7 @@ export default function EditorView({ fileId, onOpen }: EditorViewProps) {
       height: '100%',
       color: 'var(--foreground)'
     }}>
-      <h2 style={{ fontSize: '2rem', marginBottom: '1rem', fontWeight: 600 }}>ยินดีต้อนรับสู่ แฟ้มงานของ Jakkawal Phooluemsai</h2>
+      <h2 style={{ fontSize: '2rem', marginBottom: '1rem', fontWeight: 600 }}>ยินดีต้อนรับสู่ แฟ้มงานของ Jakkawal Galaxy</h2>
       <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: 'var(--view-short-path-color)' }}>
         สามารถเลือกดูตามหมวดหมู่ได้เลย หรือกด <b>Profile Summary</b> เพื่อดูภาพรวม
       </p>

@@ -3,15 +3,9 @@
 const socialLinks = [
   {
     title: 'GitHub',
-    value: 'github.com/jakkawal',
+    value: 'github.com/jakkawal23',
     icon: '🐙',
-    href: 'https://github.com/jakkawal',
-  },
-  {
-    title: 'LinkedIn',
-    value: 'linkedin.com/in/jakkawal',
-    icon: '💼',
-    href: 'https://linkedin.com/in/jakkawal',
+    href: 'https://github.com/jakkawal23',
   },
   {
     title: 'YouTube',
@@ -21,9 +15,9 @@ const socialLinks = [
   },
   {
     title: 'TikTok',
-    value: '@jakkawalgalaxy',
+    value: '@jakkawal_galaxy',
     icon: '🎬',
-    href: 'https://tiktok.com/@jakkawalgalaxy',
+    href: 'https://tiktok.com/@jakkawal_galaxy',
   },
 ];
 

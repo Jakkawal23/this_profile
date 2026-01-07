@@ -4,39 +4,39 @@ export default function AfterGraduationOverviewPage() {
   const timeline = [
     {
       year: '2023',
-      title: 'ชั้นปีที่ 4',
-      location: 'วิศวกรรมคอมพิวเตอร์, มหาวิทยาลัยเชียงใหม่',
+      title: 'สำเร็จการศึกษา (New Graduate)',
+      location: 'คณะวิศวกรรมศาสตร์เทคโนโลยีสารสนเทศ, สถาบันนวัตกรรมแห่งเอเชีย',
       highlights: [
-        'สำเร็จการศึกษาเกียรตินิยมอันดับ 1',
-        'เป็นหัวหน้าทีมโปรเจกต์จบด้าน AI - ระบบอ่านค่ามิเตอร์อัตโนมัติด้วย YOLOv8',
-        'ได้รับเลือกให้นำเสนอผลงานในงานวิชาการคณะ',
+        'สำเร็จการศึกษาเกียรตินิยมอันดับ 1 (GPA 3.90+)',
+        'Project Leader: พัฒนาระบบ Smart Grid Monitoring ด้วยเทคโนโลยี AI-Edge Computing',
+        'ได้รับรางวัล "Excellent Presentation Award" จากการนำเสนอผลงานวิจัยระดับสถาบัน',
       ],
     },
     {
       year: '2022',
-      title: 'ชั้นปีที่ 3',
+      title: 'นักศึกษาฝึกงานและประสบการณ์กึ่งมืออาชีพ',
       highlights: [
-        'ฝึกงานที่บริษัทซอฟต์แวร์ ทำงานในทีม DevOps และ Backend',
-        'เริ่มใช้ Docker, FastAPI และ GitHub Actions อย่างจริงจัง',
-        'เข้าร่วมแข่งขัน LINE Hackathon และได้รับรางวัลชมเชย',
+        'Full-stack Infrastructure Intern ณ Tech Startup ระดับ Series A',
+        'ออกแบบ CI/CD Pipelines และทำ Automated Deployment ด้วย GitLab CI และ AWS',
+        'ได้รับรางวัล Silver Medal จากการแข่งขัน Tech Challenge ระดับประเทศ',
       ],
     },
     {
       year: '2021',
-      title: 'ชั้นปีที่ 2',
+      title: 'พัฒนาความเชี่ยวชาญเฉพาะทาง',
       highlights: [
-        'เริ่มเรียนวิชา Core เช่น Operating Systems, Data Structures',
-        'ทำโปรเจกต์กลุ่มเกี่ยวกับระบบลงทะเบียนเรียน',
-        'เรียนรู้ React, Firebase และสร้างเว็บแอปแรกของตัวเอง',
+        'มุ่งเน้นการศึกษาด้าน High Performance Computing และ Distributed Systems',
+        'ร่วมพัฒนา Open Source Project ด้านระบบจัดการโลจิสติกส์อัจฉริยะ',
+        'เชี่ยวชาญการสร้าง Microservices ด้วย Node.js และ MongoDB',
       ],
     },
     {
       year: '2020',
-      title: 'ชั้นปีที่ 1',
+      title: 'การวางรากฐานทางวิศวกรรม',
       highlights: [
-        'เริ่มต้นชีวิตมหาวิทยาลัยท่ามกลางโควิด-19 (เรียนออนไลน์)',
-        'เข้าชมรม Coding Club และเริ่มศึกษาการเขียนโปรแกรมเชิงลึก',
-        'เรียนพื้นฐาน Python, C และ SQL',
+        'เริ่มศึกษาโครงสร้างข้อมูลขั้นสูง (Advanced Data Structures) และ Algorithm Analysis',
+        'เป็นแกนนำจัดตั้ง Virtual Hackathon สำหรับนิสิตใหม่ในช่วง Work from Home',
+        'ปูพื้นฐานภาษา Rust และการจัดการระบบฐานข้อมูลเชิงสัมพันธ์ (RDBMS)',
       ],
     },
   ];
